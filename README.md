@@ -32,10 +32,6 @@ Australia (ALA), that allows you to effectively investigate the available datase
 For that, I first install and loaded the package (from CRAN). I then asked for help to read more about the package. I also accessed the [galah vignette](https://atlasoflivingaustralia.github.io/galah/articles/galah.html) for extra information and guideline.
 
 ```r
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-```r
 install.packages("galah")
 library(galah)
 ?galah
