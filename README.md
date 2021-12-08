@@ -4,19 +4,16 @@
 
 <a href="https://jessicafenker.com/">jessicafenker.com</a> | <a href="https://scholar.google.com/citations?user=x3R-PWkAAAAJ&hl=en&oi=ao">google scholar profile</a>
 
-This is an source document requested by the Atlas of Living Australia (ALA) as a step prior 
-to the interview for the role of Data Analyst. A simplied R script can be found <here>.
+This is an source document requested by the Atlas of Living Australia (ALA) as a step prior to the interview for the role of Data Analyst. A simplied R script can be found <here>.
 
 ------------------------------------------------------------------------
 
 ## **General Rules**
 
-Download a dataset following a set of requirements, and produce a visualisation  
-based on a subset of the data that you find informative. You should also provide  
+Download a dataset following a set of requirements, and produce a visualisation based on a subset of the data that you find informative. You should also provide  
 code showing the steps taken to download, explore and visualise the data.  
 
-Using a method of your choice, download all observations of reptiles (class   
-"Reptilia") recorded in the ACT. Your download should include, need not be   
+Using a method of your choice, download all observations of reptiles (class "Reptilia") recorded in the ACT. Your download should include, need not be   
 limited to, the following fields:
 
 - decimalLatitude  
@@ -31,11 +28,8 @@ limited to, the following fields:
 
 ## **Methodology to obtain the dataset**
 
-I decided to use the `galah` R package to download the dataset directly to my  
-computer. `galah` is an R interface to the data hosted by the Atlas of Living   
-Australia (ALA), that allows you to effectively investigate the available dataset,  
-apply filters and quality profiles and download the data, including species records   
-and media data.
+I decided to use the `galah` R package to download the dataset directly to my computer. `galah` is an R interface to the data hosted by the Atlas of Living   
+Australia (ALA), that allows you to effectively investigate the available dataset, apply filters and quality profiles and download the data, including species records and media data.
 
 For that, I first install and loaded the package (from CRAN). I then asked for help to read more about the package. I also accessed the [galah vignette](https://atlasoflivingaustralia.github.io/galah/articles/galah.html) for extra information and guideline.
 
@@ -93,8 +87,7 @@ ala_counts(taxa = reptiles,
 ```
 
 
-Then, it was time to explore the search_fields function and test the filtering
-selection.
+Then, it was time to explore the search_fields function and test the filtering selection.
 
 ```r
 search_fields("species")
@@ -108,8 +101,8 @@ museum_sp_ACT <- select_filters(
 ```
 
 
-Now, asking for occurences of reptiles applying previous filter options and explored
-the select_columns() function
+Now, asking for occurences of reptiles applying previous filter options and explored the select_columns() function
+
 ```r
 reptiles_museum_ACT <- ala_occurrences(taxa    = reptiles,
                                        filters = museum_sp_ACT )
