@@ -9,7 +9,7 @@ to the interview for the role of Data Analyst. A simplied R script can be found 
 
 ------------------------------------------------------------------------
 
-## **General Rules**
+### **General Rules**
 
 Download a dataset following a set of requirements, and produce a visualisation  
 based on a subset of the data that you find informative. You should also provide  
@@ -29,7 +29,7 @@ limited to, the following fields:
 
 
 
-## **Methodology to obtain the dataset**
+### **Methodology to obtain the dataset**
 
 I decided to use the `galah` R package to download the dataset directly to my  
 computer. `galah` is an R interface to the data hosted by the Atlas of Living   
@@ -60,7 +60,7 @@ galah_config(atlas = "Australia",
 
 
 
-## **Understanding the data structure**
+### **Understanding the data structure**
 
 Prior to obtain the necessary dataset, I played a bit with some 'galah' functions.  
 
@@ -132,7 +132,7 @@ profiles
 
 
 
-## **Obtaining the dataset**
+### **Obtaining the dataset**
 
 
 I searched for "Reptilia", which includes all reptile species available in the Atlas. As requested in the task, I filetered the dataset for records only in the ACT and specifying the set of columns that I was interested. I asked to include a Digital Object Identifier (DOI) number, that I could refer if the data was going to be published.
@@ -172,6 +172,6 @@ media_data <- ala_media(
 
 
 
-> ### **Plotting the results**
+### **Plotting the results**
 
 I decided to focus on the... 
