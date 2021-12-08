@@ -26,10 +26,9 @@ Using a method of your choice, download all observations of reptiles (class "Rep
 
 ## **Methodology to obtain the dataset**
 
-I decided to use the `galah` R package to download the dataset directly to my computer. `galah` is an R interface to the data hosted by the Atlas of Living   
-Australia (ALA), that allows you to effectively investigate the available dataset, apply filters and quality profiles and download the data, including species records and media data.
+I decided to use the `galah` R package to download the dataset directly to my computer. `galah` is an R interface to the data hosted by the Atlas of Living Australia (ALA), that allows you to effectively investigate the available dataset, apply filters and quality profiles and download the data, including species records and media data.
 
-For that, I first install and loaded the package (from CRAN). I then asked for help to read more about the package. I also accessed the [galah vignette](https://atlasoflivingaustralia.github.io/galah/articles/galah.html) for extra information and guideline.
+For that, I first installed and loaded the package (from CRAN). I then asked for help, using the help? funciton to read more about the package. I also accessed the [galah vignette](https://atlasoflivingaustralia.github.io/galah/articles/galah.html) for extra information and guideline.
 
 ```r
 install.packages("galah")
@@ -38,7 +37,7 @@ library(galah)
 ```
 
 
-Following guidelines, I specified that I wanted data from the Australia, and included my e-mail (already registered at ALA) to be able to download the data.
+Following the guidelines, I specified that I wanted data from Australia, and included my e-mail (already registered at ALA) to be able to download the data.
 
 ```r
 galah_config(atlas = "Australia",
@@ -50,9 +49,9 @@ galah_config(atlas = "Australia",
 
 ## **Understanding the data structure**
 
-Prior to obtain the necessary dataset, I played a bit with some 'galah' functions.  
+Prior to obtaining the necessary dataset, I investigated some of the 'galah' functions.  
 
-First, I search for the species/group of interest and count the number of registers:
+First, I searched for the species/group of interest and the count of number of registers:
 
 ```r
 reptiles <- select_taxa("Reptilia")
@@ -82,13 +81,13 @@ ala_counts(taxa = reptiles,
 ```
 
 
-Then, it was time to explore the search_fields function and test the filtering selection:
+Then I explored the search_fields function and tested the filtering selection:
 
 ```r
 search_fields("species")
 
-# testing the select_filters functions
-# choosing preserved specimens for the ACT from 2010 to today
+# Testing the select_filters functions
+# Choosing preserved specimens for the ACT from 2010 to today
 museum_sp_ACT <- select_filters(
   stateProvince = "Australian Capital Territory",
   basisOfRecord = "PRESERVED_SPECIMEN",
@@ -96,21 +95,21 @@ museum_sp_ACT <- select_filters(
 ```
 
 
-Now, asking for occurences of reptiles, applying previous filter options and exploring the select_columns() function:
+Then, I requested occurences of reptiles, applied previous filter options and explored the select_columns() function:
 
 ```r
 reptiles_museum_ACT <- ala_occurrences(taxa    = reptiles,
                                        filters = museum_sp_ACT )
 
-# exploring the select columns function
+# Exploring the select columns function
 ALA_basic_columns <- select_columns( group = "basic")
 
-# including extra columns to the basic
+# Including extra columns to the basic
 task_columns <- select_columns( c("basisOfRecord","cl22","cl10902"), 
                                 group = "basic")
 ```
 
-Finally, I explored the data quality profiles available at the package:
+Finally, I explored the data quality profiles available in the package:
 
 ```r
 profiles <- find_profiles()
@@ -136,10 +135,10 @@ reptiles_ACT <- ala_occurrences(taxa    = reptiles,
                                 mint_doi  = TRUE)
 head(reptiles_ACT)
 
-# plot the coordinates for a fast visualization of your point data
+# Plot the coordinates for a fast visualization of your point data
 plot(reptiles_ACT$decimalLongitude,reptiles_ACT$decimalLatitude)
 
-#generate a DOI
+# Generate a DOI
 doi <- attr(reptiles_ACT, "doi")
 citation <- ala_citation(reptiles_ACT)
 doi
@@ -147,7 +146,7 @@ citation
 ```
 
 
-For curiosity, I also explored the reptiles images available at ALA from 2021:
+For curiosity, I also explored the reptile images available at ALA from 2021:
 
 ```r
 # Use the occurrences previously downloaded
