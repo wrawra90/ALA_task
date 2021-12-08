@@ -10,11 +10,9 @@ This is an source document requested by the Atlas of Living Australia (ALA) as a
 
 ## **General Rules**
 
-Download a dataset following a set of requirements, and produce a visualisation based on a subset of the data that you find informative. You should also provide  
-code showing the steps taken to download, explore and visualise the data.  
+Download a dataset following a set of requirements, and produce a visualisation based on a subset of the data that you find informative. You should also provide code showing the steps taken to download, explore and visualise the data.  
 
-Using a method of your choice, download all observations of reptiles (class "Reptilia") recorded in the ACT. Your download should include, need not be   
-limited to, the following fields:
+Using a method of your choice, download all observations of reptiles (class "Reptilia") recorded in the ACT. Your download should include, but not be limited to, the following fields:
 
 - decimalLatitude  
 - decimalLongitude  
