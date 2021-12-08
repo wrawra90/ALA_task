@@ -37,7 +37,7 @@ Australia (ALA), that allows you to effectively investigate the available datase
 apply filters and quality profiles and download the data, including species records   
 and media data.
 
-For that, I first install and loaded the package (from CRAN). I then asked for help to read more about the package. I also accessed the [galah vignette] (https://atlasoflivingaustralia.github.io/galah/index.html) for extra information and guideline.
+For that, I first install and loaded the package (from CRAN). I then asked for help to read more about the package. I also accessed the [galah vignette](https://atlasoflivingaustralia.github.io/galah/articles/galah.html) for extra information and guideline.
 
 ```r
 knitr::opts_chunk$set(echo = TRUE)
