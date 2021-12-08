@@ -4,7 +4,7 @@
 
 <a href="https://jessicafenker.com/">jessicafenker.com</a> | <a href="https://scholar.google.com/citations?user=x3R-PWkAAAAJ&hl=en&oi=ao">google scholar profile</a>
 
-This is an source document requested by the Atlas of Living Australia (ALA) as a step prior to the interview for the role of Data Analyst. A simplied R script can be found <here>.
+This is an source document requested by the Atlas of Living Australia (ALA) as a step prior to the interview for the role of Data Analyst. A simplied R script can be found (here).
 
 ------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ galah_config(atlas = "Australia",
 
 Prior to obtain the necessary dataset, I played a bit with some 'galah' functions.  
 
-First, I search for the species/group of interest and count the number of registers.
+First, I search for the species/group of interest and count the number of registers:
 
 ```r
 reptiles <- select_taxa("Reptilia")
@@ -60,7 +60,7 @@ reptiles
 ala_counts(taxa = reptiles)  # counts the number of registers: 1312041
 ```
 
-Then, I explores the categories within the ALA fields of interest.
+Then, I explored the categories within the ALA fields of interest:
 
 ```r
 find_field_values("basisOfRecord")
@@ -70,7 +70,8 @@ find_field_values("cl22")
 find_field_values("cl10902")
 ```
 
-For curiosity, I also obtained a list of reptile species in the ACT
+For curiosity, I also obtained a list of reptile species in the ACT:
+
 ```{r galah}
 ACT_reptile_sp <- ala_species(taxa = reptiles,
                        filters = select_filters(stateProvince = "Australian Capital Territory"))
@@ -81,7 +82,7 @@ ala_counts(taxa = reptiles,
 ```
 
 
-Then, it was time to explore the search_fields function and test the filtering selection.
+Then, it was time to explore the search_fields function and test the filtering selection:
 
 ```r
 search_fields("species")
@@ -95,7 +96,7 @@ museum_sp_ACT <- select_filters(
 ```
 
 
-Now, asking for occurences of reptiles applying previous filter options and explored the select_columns() function
+Now, asking for occurences of reptiles, applying previous filter options and exploring the select_columns() function:
 
 ```r
 reptiles_museum_ACT <- ala_occurrences(taxa    = reptiles,
@@ -109,7 +110,7 @@ task_columns <- select_columns( c("basisOfRecord","cl22","cl10902"),
                                 group = "basic")
 ```
 
-Finally, I explored the data quality profiles available at the package
+Finally, I explored the data quality profiles available at the package:
 
 ```r
 profiles <- find_profiles()
@@ -122,9 +123,9 @@ profiles
 ## **Obtaining the dataset**
 
 
-I searched for "Reptilia", which includes all reptile species available in the Atlas. As requested in the task, I filetered the dataset for records only in the ACT and specifying the set of columns that I was interested. I asked to include a Digital Object Identifier (DOI) number, that I could refer if the data was going to be published.
+I searched for "Reptilia", which includes all reptile species available at ALA. As requested in the task, I filetered the dataset for records only in the ACT and specifying the set of columns that I was interested. I asked to include a Digital Object Identifier (DOI) number, that I could refer if the data was going to be published.
 
-Note that ACT includes data from Canberra and surrounding regions and Jervis Bay.
+Note that ACT includes data from Canberra and surrounding regions and Jervis Bay:
 
 ```r
 reptiles_ACT <- ala_occurrences(taxa    = reptiles,
@@ -146,7 +147,7 @@ citation
 ```
 
 
-For curiosity, I also explored the reptiles images available at ALA from 2021.
+For curiosity, I also explored the reptiles images available at ALA from 2021:
 
 ```r
 # Use the occurrences previously downloaded
